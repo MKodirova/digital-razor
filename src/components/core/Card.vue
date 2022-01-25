@@ -1,28 +1,33 @@
 <template>
-  <div class="flex items-center space-x-6 my-20">
-    <div v-for="(card, index) in cards" :key="index">
-      <div
-        class="bg-light-black relative shadow p-6 w-80 h-500 border-transparent border-2 rounded-sm hover:border-red-500"
-      >
-        <div class="rounded-xl bg-gradient-to-t from-blue to-light-blue">
-          <img :src="card.img" class="w-80 h-72" />
-        </div>
+  <div>
+    <div class="lg:hidden flex">
+      <card-swiper />
+    </div>
+    <div class="lg:flex hidden items-center space-x-6 my-20">
+      <div v-for="(card, index) in cards" :key="index">
         <div
-          class="text-white font-black text-2xl h-10 text-center uppercase mt-5"
+          class="bg-light-black relative shadow p-6 w-80 h-500 border-transparent border-2 rounded-sm hover:border-red-500"
         >
-          {{ card.title }}
-        </div>
-        <div class="absolute bottom-5 inset-x-5 block mt-6">
-          <div class="text-gray-200 text-sm text-center mb-4">
-            {{ card.subtitle }}
+          <div class="rounded-xl bg-gradient-to-t from-blue to-light-blue">
+            <img :src="card.img" class="w-80 h-72" />
           </div>
-          <div class="flex items-center justify-center">
-            <button
-              class="text-white border flex items-center border-red-500 rounded-sm p-4 text-lg font-black"
-            >
-              Подробнее
-              <img src="images/vector.png" class="ml-2" />
-            </button>
+          <div
+            class="text-white font-black text-2xl h-10 text-center uppercase mt-5"
+          >
+            {{ card.title }}
+          </div>
+          <div class="absolute bottom-5 inset-x-5 block mt-6">
+            <div class="text-gray-200 text-sm text-center mb-4">
+              {{ card.subtitle }}
+            </div>
+            <div class="flex items-center justify-center">
+              <button
+                class="text-white border flex items-center border-red-500 rounded-sm p-4 text-lg font-black"
+              >
+                Подробнее
+                <img src="images/vector.png" class="ml-2" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -31,7 +36,9 @@
 </template>
 
 <script>
+import CardSwiper from "./CardSwiper.vue";
 export default {
+  components: { CardSwiper },
   name: "Card",
   data() {
     return {

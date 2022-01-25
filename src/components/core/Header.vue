@@ -1,7 +1,12 @@
 <template>
   <div class="container mx-auto pt-5">
+    <div class="lg:hidden flex items-center justify-between">
+      <img src="images/personal.png" class="w-16 h-16" />
+      <img src="images/logo.png" class="w-12 h-12" />
+      <img src="images/hamburger.png" alt="" />
+    </div>
     <div
-      class="flex items-center text-white justify-between border-b border-light-gray border-opacity-80 pb-8"
+      class="lg:flex hidden items-center text-white justify-between border-b border-light-gray border-opacity-80 pb-8"
     >
       <div class="flex items-center space-x-8 ml-32">
         <div v-for="(item, index) in menu" :key="index">
@@ -20,7 +25,7 @@
         <div><img src="images/personal.png" class="w-16 h-16" /></div>
       </div>
     </div>
-    <div class="flex items-center text-white justify-between mt-8">
+    <div class="lg:flex hidden items-center text-white justify-between mt-8">
       <div class="flex items-center space-x-8">
         <img src="images/logo.png" alt="" />
         <div v-for="(item, index) in subMenu" :key="index">

@@ -5,19 +5,19 @@
     </button> -->
     <div class="flex items-center justify-center">
       <div
-        class="uppercase font-black text-5xl text-white border-b-2 border-red-500 p-6"
+        class="uppercase font-black lg:text-5xl text-2xl text-white border-b-2 border-red-500 lg:p-6 p-3"
       >
         твой пк
       </div>
       <div></div>
     </div>
     <div
-      class="flex items-center justify-center uppercase text-gray-300 text-xl mt-6"
+      class="flex items-center justify-center uppercase text-gray-300 lg:text-xl text-lg mt-6"
     >
       здесь пока ничего нет...
     </div>
     <div
-      class="flex items-center justify-center uppercase text-white text-4xl font-semibold"
+      class="flex items-center justify-center uppercase text-center text-white lg:text-4xl text-2xl font-semibold"
     >
       начни создавать свой пк
     </div>
