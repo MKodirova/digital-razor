@@ -8,6 +8,13 @@ module.exports = {
       },
       colors: {
         "dark-blue": "#020405",
+        "light-black": "#0C1117",
+        "light-gray": "#B3BFCD",
+        blue: "#3A3C59",
+        "light-blue": "#0C1117",
+      },
+      height: {
+        500: "540px",
       },
       keyframes: {
         "fade-in-down": {
