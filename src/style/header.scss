@@ -1,0 +1,16 @@
+.navbar-item {
+    @apply border-transparent;
+    @apply cursor-pointer;
+  }
+
+.navbar-item:hover{
+    @apply border-b-2;
+    @apply border-gray-500;
+}
+
+.navbar-item.active{
+    @apply border-b-2;
+    @apply border-gray-500;
+    @apply text-gray-800
+
+}
