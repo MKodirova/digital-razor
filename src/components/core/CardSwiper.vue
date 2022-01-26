@@ -1,20 +1,23 @@
 <template>
-  <div class="relative">
-    <swiper ref="swiper" class="swiper" :options="cardOption">
+  <div class="mt-4 mb-7 gap-3">
+    <swiper class="swiper" ref="swiper" :options="cardOption">
       <swiper-slide
         v-for="(card, index) in cards"
         :key="index"
-        class="bg-light-black group relative shadow p-6 w-32 border-transparent border-2 rounded-sm hover:border-red-500"
+        class="flex items-center justify-center"
       >
-        <div class="rounded-xl bg-gradient-to-t from-blue to-light-blue">
-          <img :src="card.img" class="w-32 h-72" />
-        </div>
         <div
-          class="text-white font-black text-2xl h-10 text-center uppercase mt-5"
+          class="relative bg-light-black shadow p-6 w-72 border-transparent border-2 rounded-sm border-red-500"
         >
-          {{ card.title }}
-        </div>
-        <div class="absolute bottom-5 inset-x-5 block mt-6">
+          <div class="rounded-xl bg-gradient-to-t from-blue to-light-blue">
+            <img :src="card.img" class="w-60 h-64" />
+          </div>
+          <div
+            class="text-white font-black text-2xl text-center uppercase mt-5"
+          >
+            {{ card.title }}
+          </div>
+
           <div class="text-gray-200 text-sm text-center mb-4">
             {{ card.subtitle }}
           </div>
@@ -26,21 +29,21 @@
               <img src="images/vector.png" class="ml-2" />
             </button>
           </div>
+          <div class="absolute top-1/2 flex justify-between inset-x-0">
+            <div
+              @click="prev()"
+              class="swiper-button-prev border rounded-full border-white shadow-md absolute -left-14"
+              slot="button-prev"
+            ></div>
+            <div
+              @click="next()"
+              class="swiper-button-next border rounded-full border-white shadow-md absolute -right-14"
+              slot="button-next"
+            ></div>
+          </div>
         </div>
       </swiper-slide>
     </swiper>
-    <div class="absolute group top-1/2 justify-between inset-x-0">
-      <div
-        slot="button-prev"
-        class="swiper-button-prev btn shadow-md group-hover:opacity-100 opacity-0 -left-9"
-        @click="prev()"
-      />
-      <div
-        slot="button-next"
-        class="swiper-button-next btn shadow-md group-hover:opacity-100 opacity-0 -right-9"
-        @click="next()"
-      />
-    </div>
   </div>
 </template>
 
@@ -49,26 +52,6 @@ export default {
   name: "CardSwiper",
   data() {
     return {
-      cards: [
-        {
-          img: "images/img.png",
-          title: "Игровые компьютеры",
-          subtitle:
-            "Создаем системы с учетом требований геймеров и энтузиастов",
-        },
-        {
-          img: "images/computer.png",
-          title: "РаБОЧИЕ СТАНЦИИ",
-          subtitle:
-            "Высокопроизводительные станции созданные для работы в профессиональных пакетах 3D-моделирования и анимации",
-        },
-        {
-          img: "images/mono.png",
-          title: "МОНОБЛОКИ",
-          subtitle:
-            "Вмещает в себя всё необходимое и экономит рабочее пространство ",
-        },
-      ],
       cardOption: {
         direction: "horizontal",
         slideToClickedSlide: false,
@@ -95,9 +78,28 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
+      cards: [
+        {
+          img: "images/img.png",
+          title: "Игровые компьютеры",
+          subtitle:
+            "Создаем системы с учетом требований геймеров и энтузиастов",
+        },
+        {
+          img: "images/computer.png",
+          title: "РаБОЧИЕ СТАНЦИИ",
+          subtitle:
+            "Высокопроизводительные станции созданные для работы в профессиональных пакетах 3D-моделирования и анимации",
+        },
+        {
+          img: "images/mono.png",
+          title: "МОНОБЛОКИ",
+          subtitle:
+            "Вмещает в себя всё необходимое и экономит рабочее пространство ",
+        },
+      ],
     };
   },
-
   methods: {
     prev() {
       this.$refs.swiper.$swiper.slidePrev();
@@ -112,16 +114,17 @@ export default {
 <style scoped>
 .swiper-button-prev,
 .swiper-button-next {
-  --swiper-theme-color: #059669;
-  background-color: white;
+  --swiper-theme-color: white;
+  background-color: black;
+  border-color: white;
   padding: 22px;
-  color: #059669 !important;
-  fill: #059669 !important;
-  stroke: #059669 !important;
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
   border-radius: 100%;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 13px;
+  font-size: 16px;
 }
 </style>

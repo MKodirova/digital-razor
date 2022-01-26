@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="lg:hidden flex">
+    <div class="lg:hidden flex mt-6">
       <card-swiper />
     </div>
     <div class="lg:flex hidden items-center space-x-6 my-20">
