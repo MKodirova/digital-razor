@@ -4,10 +4,10 @@
       <swiper-slide
         v-for="(card, index) in cards"
         :key="index"
-        class="flex items-center justify-center"
+        class="flex items-center justify-center transition duration-500"
       >
         <div
-          class="relative bg-light-black shadow p-6 w-72 border-transparent border-2 rounded-sm border-red-500"
+          class="relative bg-light-black shadow p-6 w-72 border-2 rounded-sm border-red-500"
         >
           <div class="rounded-xl bg-gradient-to-t from-blue to-light-blue">
             <img :src="card.img" class="w-60 h-64" />
@@ -29,7 +29,9 @@
               <img src="images/vector.png" class="ml-2" />
             </button>
           </div>
-          <div class="absolute top-1/2 flex justify-between inset-x-0">
+          <div
+            class="absolute top-1/2 flex items-center justify-between inset-x-0"
+          >
             <div
               @click="prev()"
               class="swiper-button-prev border rounded-full border-white shadow-md absolute -left-14"
@@ -80,18 +82,21 @@ export default {
       },
       cards: [
         {
+          id: 1,
           img: "images/img.png",
           title: "Игровые компьютеры",
           subtitle:
             "Создаем системы с учетом требований геймеров и энтузиастов",
         },
         {
+          id: 2,
           img: "images/computer.png",
           title: "РаБОЧИЕ СТАНЦИИ",
           subtitle:
             "Высокопроизводительные станции созданные для работы в профессиональных пакетах 3D-моделирования и анимации",
         },
         {
+          id: 3,
           img: "images/mono.png",
           title: "МОНОБЛОКИ",
           subtitle:
